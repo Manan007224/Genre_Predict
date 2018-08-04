@@ -99,8 +99,8 @@ def feature_matrix_fit(data,vect_type,data_col) :
 
 def main():
 
-    omdb_data = pd.read_json('../input/omdbdatajsongz/omdb-data.json/omdb-data.json', lines=True)
-    rotten_tomatoes = pd.read_json('../input/rottentomatoesjsongz/rotten-tomatoes.json/rotten-tomatoes.json', orient='records', lines=True)
+    omdb_data = pd.read_json('data/omdb-data.json.gz', lines=True)
+    rotten_tomatoes = pd.read_json('data/rotten-tomatoes.json.gz', orient='records', lines=True)
     movies_data = pd.merge(omdb_data, rotten_tomatoes, on=['imdb_id'])
     refined_movies = movies_data.omdb_genres.apply(pd.Series).stack().reset_index(level=1, drop=True).to_frame('omdb_genres')
     refined_movies = refined_movies.reset_index()
