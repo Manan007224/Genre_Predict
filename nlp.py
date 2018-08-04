@@ -31,7 +31,8 @@ nltk.download('stopwords')
 nltk.download('wordnet')
 
 
-
+STOPWORDS = stopwords.words('english')
+nlp = en_core_web_sm.load()
 
 
 def change_pdFrame(row, new_df):
@@ -112,8 +113,7 @@ def main():
     dummies = pd.get_dummies(refined_movies).drop_duplicates()
     movies_dummies_data = pd.merge(dummies,movies_data,on=['index'])
 
-    STOPWORDS = stopwords.words('english')
-    nlp = en_core_web_sm.load()
+
 
 
 
