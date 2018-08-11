@@ -1,4 +1,4 @@
-# 353_Project
+# Genre_Predict
 
 ## Objectives
 
