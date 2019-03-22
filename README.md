@@ -8,7 +8,9 @@
 
 ## Technical Details
 
-The code is written in Python 3.6 version. To setup the environment with all required dependencies you must have first jupyter-notebook via terminal or using Anaconda cloud. Also pip3 must be installed in the command line to install the packages
+Python Version: - 3.6
+Environment: - Jupyter Notebook
+Package Manager: - PIP3
 
 ```javascript
 pip3 install pandas
@@ -22,14 +24,14 @@ python3 -m spacy download en_core_web_sm
 
 ## Usage
 
-To execute the python3 code, clone this repository and go inside this directory and write:
+Clone this repository and the code can be started using: -
 ```javacript
 python3 nlp.py
 ```
 
 ## Reading Output
 
-The code outputs model scores, but further more exploration you can load the .ipynb file which is inside Jupyter-Notebook called kernel.ipynb for easier access.
+The code outputs model scores, but further more exploration you can load kernel.ipynb.
 
 ## Additional Information
 Problem Addressed:
