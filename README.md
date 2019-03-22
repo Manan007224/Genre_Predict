@@ -1,10 +1,10 @@
-# Genre_Predict
+# Genre Predict
 
 ## Objectives
 
-1) - To Prove that a movies plot summary has no relation whatsover with the critic ratings or there is no such 'faviourite' genres that critic's like
+1) To prove that a movies plot summary has no relation whatsover with the critic ratings or there is no such 'favourite' genres that critics like
 
-2) - To predict a movie's genres using plot summary with the help of nltk packages.
+2) To predict a movie's genres using plot summary with the help of nltk packages
 
 ## Technical Details
 
@@ -32,5 +32,4 @@ python3 nlp.py
 The code outputs model scores, but further more exploration you can load the .ipynb file which is inside Jupyter-Notebook called kernel.ipynb for easier access.
 
 ## Additional Information
-I have also added the data, so for further more explorations you can take a look into it.
-
+Additional data is there for your exploration.
