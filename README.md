@@ -33,16 +33,19 @@ The code outputs model scores, but further more exploration you can load the .ip
 
 ## Additional Information
 Problem Addressed:
-My goal was to prove that plot summary given by IMDB had no relation with Rotten Tomatoes critic ratings.
+The goal of this assignemnt is to prove that plot summary given by IMDB had no relation with Rotten Tomatoes critic ratings.
 
 Getting/Cleaning Data:
-I had two data sources, one by IMDB and one by Rotten Tomatoes. The IMDB dataset had good textual information which encouraged to explore and experiment NLP, and the Rotten Tomatoes dataset had numerical information like critic rating, audience ratings etc. So, I merged the two datasets and removed the unnecessary columns which I didn't needed. The obvious intuition was to apply regression methods to plot summary and critic percent column and state that these aren't correlated, but the problem was to convert the textual data (plot summary) into some form of numerical data. I started with tokenizing the summary (separate into words) and then removing the punctuations (',', '.', '!'. '%') and stop words ('is', 'a', 'the', 'and'). After that I had only nouns and verbs in the plot summary column and I also added some separate columns like purity (Weighted Words/Total word count). Also, I removed the columns. I also removed all the rows where the values were Nan to remove all the redundant data. After my data cleaning, I lost around 30% of my data points but at least it was not redundant. Also I had to do some rearrangements in the dataset’s columns in order to get according to my needs.
+Data is taken from IMDB and Rotten Totatoes. Textual information is provided by IMDB and information like critic rating, audience rating etc is provided by Rotten Tomatoes. In the program, the 2 datasets are merged and uncenessary colums are removed. The obvious intuition was to apply regression methods to plot summary and critic percent column and state that these aren't correlated, but the problem was to convert the textual data (plot summary) into some form of numerical data. Program first tokenizes the summary (separate into words), removes the punctuations (',', '.', '!'. '%') and stop words ('is', 'a', 'the', 'and'). After that only nouns and verbs are left in the plot summary column. Some separate columns like purity (Weighted Words/Total word count) are added to the data. Also, some of the columns and rows (where the values were Nan) are removeed to avoid redundant data. After the data cleaning, around 30% of the data points are lost but at least it was not redundant. Also some rearrangements are done in the dataset’s columns in order to get according to the needs.
 
 Data Analysis:
 After cleaning the data, I had to apply TFIDF vectorize to my plot summary data to reflect how important a word is to a document in a collection or corpus. Tfidf is just a simple ranking algorithm which works on term frequency. After applying to the TFIDF I was left with a N*N matrix which represented the plot summary in numerical form. N is the no. of distinct words in the plot summary column (after cleaning, as having stop words like 'a', 'is' make no sense). I tested my training
   
 Results:
-LassoRegression(Alpha=0.1) = 0.0813 LassoRegression(Alpha=0.2) = 0.0093 LassoRegression(Alpha=0.6) = 0.0147 LassoRegression(Alpha=0.75) = 0.0267
+LassoRegression(Alpha=0.1) = 0.0813 
+LassoRegression(Alpha=0.2) = 0.0093 
+LassoRegression(Alpha=0.6) = 0.0147 
+LassoRegression(Alpha=0.75) = 0.0267
 The graph shows how the Lasso Regression performed over different range of alpha values.
 
 Limitations:
